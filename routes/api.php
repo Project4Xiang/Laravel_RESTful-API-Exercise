@@ -14,6 +14,8 @@ Route::get('stocklist/{no}/{date}', 'App\Http\Controllers\API\StockListControlle
 Route::post('stocklist', 'App\Http\Controllers\API\StockListController@store');
 Route::patch('stocklist/{id}', 'App\Http\Controllers\API\StockListController@update');
 Route::delete('stocklist/{id}', 'App\Http\Controllers\API\StockListController@destroy');
+// Route::get('stocklist', [StockListController::class, 'index']);
+
 /*
 |--------------------------------------------------------------------------
 | StockInfo Routes

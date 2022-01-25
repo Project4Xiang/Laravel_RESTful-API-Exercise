@@ -17,7 +17,16 @@ class StockListController extends Controller
     public function index()
     {
         $stocklist = StockList::all();
-        return response($stocklist, Response::HTTP_CREATED);
+        if($stocklist->isNotEmpty()){
+            return response($stocklist, Response::HTTP_CREATED);
+        }else{
+            return response()->json(
+                [
+                    'error' => 'Not Found'
+                ],
+                Response::HTTP_NOT_FOUND
+            );
+        }
     }
 
     /**

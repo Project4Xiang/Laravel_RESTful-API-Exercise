@@ -15,7 +15,7 @@ class CreateStockListTable extends Migration
     {
         Schema::create('stock_list', function (Blueprint $table) {
             $table->id();
-            $table->Integer('no')->unique();
+            $table->string('no')->unique();
             $table->string('name');
             $table->date('date')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
